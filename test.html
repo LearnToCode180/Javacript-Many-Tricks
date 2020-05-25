@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LearnToCode</title>
+	<link rel="stylesheet" type="text/css" href="test.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<div id="sideBar">
+		<img src="images/close.png" alt="close" id="close" onclick="closeFct()">
+		<a href="#">Home</a>
+		<a href="#">Services</a>
+		<a href="#">About</a>
+		<a href="#">Contact</a>
+	</div>
+	
+	<div id="content">
+		<nav id="navBar">
+			<img src="images/menu.png" alt="menu" width="32px" height="32px" onclick="menuFct()">
+			<a href="#">Home</a>
+			<a href="#">Services</a>
+			<a href="#">About</a>
+			<a href="#">Contact</a>
+		</nav>
+
+
+		<div class="paragraph" id="para1">
+			<h1>LearnToCode</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia dolore repellat odio aliquid voluptatem velit magnam quisquam officiis, saepe doloremque vero neque, quibusdam reiciendis tenetur dolor harum esse. Maxime at molestiae cum mollitia ducimus, similique atque animi? Minima illo molestias quisquam reprehenderit saepe delectus natus laborum iste odio eligendi incidunt aliquid dolorum, quasi illum, ad obcaecati tenetur, at enim perspiciatis exercitationem iusto! Modi facilis perspiciatis reiciendis. Expedita, nam, neque. Reprehenderit ducimus laborum at eius sapiente, pariatur iure suscipit veritatis nobis eaque, possimus nemo culpa cumque provident tenetur aspernatur aliquid iste. Eius, rem pariatur omnis. Eaque, minus quis iure neque sunt!
+			</p>
+		</div>
+
+		<div class="paragraph" id="para2">
+			<h1>Paragraph 2</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia dolore repellat odio aliquid voluptatem velit magnam quisquam officiis, saepe doloremque vero neque, quibusdam reiciendis tenetur dolor harum esse. Maxime at molestiae cum mollitia ducimus, similique atque animi? Minima illo molestias quisquam reprehenderit saepe delectus natus laborum iste odio eligendi incidunt aliquid dolorum, quasi illum.
+			</p>
+		</div>
+
+
+		<div class="paragraph" id="para3">
+			<h1>Paragraph 3</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti alias quasi, obcaecati eum laboriosam totam accusamus? Autem debitis tenetur voluptatum nihil natus quaerat, accusamus quasi, reprehenderit qui tempora ut maiores rem aut, expedita labore, hic vitae. Dicta iusto qui aspernatur fuga mollitia sunt officiis sit veniam perspiciatis accusamus officia dolorum, nobis rerum reiciendis blanditiis ut consequatur pariatur quibusdam, impedit? Fugiat ex itaque vitae, culpa doloribus, perspiciatis nisi dolorum. Nisi quis debitis aperiam explicabo, distinctio, excepturi est quibusdam quisquam temporibus nobis consequuntur, quam cumque vel voluptates eos itaque. Ratione quam ad repudiandae, harum cumque distinctio laudantium eius, ullam eveniet commodi, odio tempora minima ipsam consequatur optio repellat magni voluptate accusamus voluptatibus id et excepturi consequuntur consectetur. Ad expedita reiciendis recusandae fugit perferendis eos totam impedit voluptates commodi alias quasi natus deserunt qui consequuntur, sit atque quam, sint mollitia nesciunt adipisci. Eum debitis rerum culpa omnis dignissimos dicta maxime, repellat a cum veritatis. Sunt, adipisci aperiam provident ullam explicabo omnis vero rerum numquam quasi obcaecati libero eos ipsum facere officiis perferendis. Recusandae eum alias ipsa eaque, facilis necessitatibus a. Inventore blanditiis totam minus sed! Porro dolorem hic expedita quas iure molestiae sapiente nobis facilis, eius nemo. Aliquam atque dignissimos reprehenderit vero excepturi!
+			</p>
+		</div>
+
+
+		<div class="paragraph" id="para4">
+			<h1>Paragraph 4</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia dolore repellat odio aliquid voluptatem velit magnam quisquam officiis, saepe doloremque vero neque, quibusdam reiciendis tenetur dolor harum esse. Maxime at molestiae cum mollitia ducimus, similique atque animi? Minima illo molestias quisquam reprehenderit saepe delectus natus laborum iste odio eligendi incidunt aliquid dolorum, quasi illum, ad obcaecati tenetur, at enim perspiciatis exercitationem iusto! Modi facilis perspiciatis reiciendis. Expedita, nam, neque. Reprehenderit ducimus laborum at eius sapiente, pariatur iure suscipit veritatis nobis eaque, possimus nemo culpa cumque provident tenetur aspernatur aliquid iste. Eius, rem pariatur omnis. Eaque, minus quis iure neque sunt!
+			</p>
+		</div>
+
+		<div class="paragraph" id="para5">
+			<h1>Paragraph 5</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia dolore repellat odio aliquid voluptatem velit magnam quisquam officiis, saepe doloremque vero neque, quibusdam reiciendis tenetur dolor harum esse. Maxime at molestiae cum mollitia ducimus, similique atque animi? Minima illo molestias quisquam reprehenderit saepe delectus natus laborum iste odio eligendi incidunt aliquid dolorum, quasi illum, ad obcaecati tenetur, at enim perspiciatis exercitationem iusto! Modi facilis perspiciatis reiciendis. 
+			</p>
+		</div>
+
+		<footer>
+			<p>@copyrights 2020</p>
+		</footer>
+	</div>
+
+	<div id="top">
+		Top
+	</div>
+
+    <script>
+    	
+		var actuelScroll = window.pageYOffset;
+
+		window.onscroll = function(){
+			var apresScroll = window.pageYOffset;
+
+			if(apresScroll > actuelScroll)
+				document.getElementById('navBar').style.top = '-80px';
+			else
+				document.getElementById('navBar').style.top = '0px';
+
+			actuelScroll = apresScroll;
+
+			if(apresScroll > 100)
+				document.getElementById('top').style.display = 'block';
+			else
+				document.getElementById('top').style.display = 'none';
+
+		}
+
+		
+
+		$(document).ready(function(){ 
+
+
+		$('#top').click(function(){ 
+
+		    $("html, body").animate({ scrollTop: 0 }, 300); 
+
+		    return false; 
+
+		}); });
+
+		
+		function menuFct(){
+			document.getElementById('sideBar').style.width = '250px';
+			document.getElementById('content').style.marginLeft = '250px';
+		}
+
+		function closeFct(){
+			document.getElementById('sideBar').style.width = '0px';
+			document.getElementById('content').style.marginLeft = '0';
+		}
+
+
+    </script>
+
+
+
+
+	
+</body>
+</html>
