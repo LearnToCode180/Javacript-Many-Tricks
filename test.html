@@ -9,7 +9,7 @@
 
 <body>
 
-	<div id="sideBar">
+	<div id="sideBar" style="width: 0px;">
 		<img src="images/close.png" alt="close" id="close" onclick="closeFct()">
 		<a href="#">Home</a>
 		<a href="#">Services</a>
@@ -17,14 +17,42 @@
 		<a href="#">Contact</a>
 	</div>
 	
-	<div id="content">
-		<nav id="navBar">
-			<img src="images/menu.png" alt="menu" width="32px" height="32px" onclick="menuFct()">
-			<a href="#">Home</a>
-			<a href="#">Services</a>
-			<a href="#">About</a>
-			<a href="#">Contact</a>
+	<div id="content" style="margin-left: 0px;">
+		<nav id="navBarGlobal" style="top: 0px;">
+			<div class="navBar">
+				<img src="images/menu.png" alt="menu" width="32px" height="32px" onclick="menuFct()">			
+				<div class="navBar navBarMedia">	
+					<a href="#" class="navBarLiens">Home</a>
+					<a href="#" class="navBarLiens">Services</a>
+					<a href="#" class="navBarLiens">About</a>
+					<a href="#" class="navBarLiens">Contact</a>
+
+					<div class="column hover">
+						<a href="#" class="navBarLiens">Languages   &#9660;</a>
+						<div class="column absolute">
+							<a href="#" class="navBarLiens">Javascript</a>
+							<a href="#" class="navBarLiens">Python</a>
+							<a href="#" class="navBarLiens">C#</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="profil" onclick="dropDownFct()">
+				<img src="images/profil.png" alt="profil" width="54px">
+				<span id="profil1">Profil</span>
+			</div>
+
+			<div id="dropDown" style="display: none;">
+				<span id="caretUp">&#9650;</span>
+				<a href="#" class="dropDownLiens">Profile</a>
+				<a href="#" class="dropDownLiens">Dashboard</a>
+				<a href="#" class="dropDownLiens">Settings</a>
+				<a href="#" class="dropDownLiens">Help &amp; Support</a>
+				<a href="#" class="dropDownLiens">Logout</a>
+			</div>
 		</nav>
+
 
 
 		<div class="paragraph" id="para1">
@@ -69,11 +97,13 @@
 		</footer>
 	</div>
 
-	<div id="top">
+	<div id="top" style="display: none;">
 		Top
 	</div>
 
     <script>
+
+    	//************************NavBar Scroll Algorithme************************//
     	
 		var actuelScroll = window.pageYOffset;
 
@@ -81,11 +111,13 @@
 			var apresScroll = window.pageYOffset;
 
 			if(apresScroll > actuelScroll)
-				document.getElementById('navBar').style.top = '-80px';
+				document.getElementById('navBarGlobal').style.top = '-80px';
 			else
-				document.getElementById('navBar').style.top = '0px';
+				document.getElementById('navBarGlobal').style.top = '0px';
 
 			actuelScroll = apresScroll;
+
+		//*************************Top Button Algorithme**************************//
 
 			if(apresScroll > 100)
 				document.getElementById('top').style.display = 'block';
@@ -107,7 +139,8 @@
 
 		}); });
 
-		
+		//**************************SideBar Algorithme****************************//
+
 		function menuFct(){
 			document.getElementById('sideBar').style.width = '250px';
 			document.getElementById('content').style.marginLeft = '250px';
@@ -119,11 +152,36 @@
 		}
 
 
+		//**************************DropDown Algorithme***************************//
+
+		function dropDownFct() {
+
+			var dropdown = document.getElementById("dropDown").style.display;
+		  
+			if(dropdown == 'flex')
+				document.getElementById("dropDown").style.display = 'none';
+			else
+				document.getElementById("dropDown").style.display = 'flex';
+			
+		}
+
+		window.onclick = function(event) {
+
+			var dropdown = document.getElementById("dropDown").style.display;
+		  	
+		    if(dropdown == 'flex')
+		  		if (!event.target.matches('#profil1')) 
+					document.getElementById("dropDown").style.display = 'none';
+	
+		}
+
+
     </script>
 
 
 
 
 	
+
 </body>
 </html>

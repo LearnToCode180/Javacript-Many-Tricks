@@ -8,37 +8,65 @@
 	font-family: hemi;
 }
 
+@font-face{
+	src: url('fonts/OpenSans-Regular.ttf');
+	font-family: OpenSans;
+}
+
 body{
 	margin: 0;
 	font-family: roboto;
 	background-color: #f2f2f2;
 }
 /***************************************NAVBAR****************************************/
-#navBar{
+#navBarGlobal{
 	display: flex;
+	justify-content: space-between;
 	background-color: black;
 	position: fixed;
 	transition: 0.3s;
 	width: 100%;
 	align-items: center;
-	opacity: 0.9;
 }
 
-#navBar img{
+.navBar{
+	display: flex;
+	align-items: center;
+}
+
+.navBar img{
 	margin-left: 20px;
 	margin-right: 20px;
 	cursor: pointer;
 }
 
-#navBar a{
+.navBarLiens{
 	padding: 25px;
 	color: white;
 	text-decoration: none;
 }
 
-#navBar a:hover{
+.navBarLiens:hover{
 	color: black;
 	background-color: white;
+}
+
+#profil{
+	color: white;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	margin-right: 30px;
+}
+
+#profil span{
+	border-left: 2px solid;
+	padding-left: 15px;
+	cursor: pointer;
+}
+
+#profil span:hover{
+	text-decoration: underline;
 }
 
 /************************************SIDEBAR******************************************/
@@ -51,7 +79,7 @@ body{
 	height: 100%;
 	left: 0;
 	background-color: black;
-	padding-top: 100px;
+	padding-top: 50px;
 	transition: 0.5s;
 	overflow-y: hidden;
 }
@@ -72,7 +100,7 @@ body{
 	height: 32px;
 	position: absolute;
 	right: 10px;
-	top: 70px;
+	top: 20px;
 	cursor: pointer;
 }
 
@@ -81,7 +109,7 @@ body{
 }
 
 
-/*************************************************************************************/
+/****************************************CONTENT*********************************************/
 
 .paragraph{
 	text-align: center;
@@ -98,6 +126,7 @@ body{
 	box-shadow: 5px 5px 10px 7px;
 	margin: auto;
 	margin-bottom: 40px;
+	border-radius: 3px;
 }
 
 #para2{
@@ -119,6 +148,8 @@ footer p{
 	
 }
 
+/***********************TOP Button****************************/
+
 #top{
 	position: fixed;
 	padding: 20px;
@@ -133,4 +164,72 @@ footer p{
 
 #top:hover{
 	background-color: #757575;
+}
+
+/*********************clickDropDown Menu***********************/
+
+#dropDown{
+	position: absolute;
+	display: none;
+	right: 50px;
+	top: 90px;
+	flex-direction: column;
+	background-color: white;
+	box-shadow: 4px 4px 25px 0px black;
+	border-radius: 3px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.dropDownLiens{
+	color: #383838;
+	text-decoration: none;
+	font-family: OpenSans;
+	padding: 10px;
+}
+
+.dropDownLiens:hover{
+	background-color: #8a8a8a;
+	color: white;
+}
+
+#caretUp{
+	position: absolute;
+	right: 10px;
+	top: -15px;
+	color: white;
+}
+
+
+/*********************hoverDropDown Menu***********************/
+
+.column{
+	display: flex;
+	flex-direction: column;
+}
+
+.absolute{
+	display: none;
+	position: absolute;
+	top: 69px;
+	background-color: black;
+}
+
+.hover:hover .absolute{display: flex;}
+
+/*********************MEDIA***********************/
+
+@media (max-width: 788px){
+
+	.navBarMedia{
+		display: none;
+	}
+
+	.paragraph{
+		font-size: 15px;
+	}
+
+	#para1 h1{
+		width: 240px;
+	}
 }
